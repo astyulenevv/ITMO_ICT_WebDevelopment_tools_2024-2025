@@ -1,0 +1,14 @@
+site_name: Документация
+site_description: Документация
+site_author: Тюленев Алексей
+
+nav:
+  - Home: index.md
+  - lr1: lr1/index.md
+  - pr1: pr1/index.md
+  - pr2: pr2/index.md
+  - pr3: pr3/index.md
+  - lr2: lr2/index.md
+
+theme:
+  name: readthedocs
