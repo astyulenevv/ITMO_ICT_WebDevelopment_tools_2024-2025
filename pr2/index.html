@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Тюленев Алексей" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>pr2 - Документация</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "pr2";
+        var mkdocs_page_input_path = "pr2/index.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Документация
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../lr1/">lr1</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../pr1/">pr1</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">pr2</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_1">Технический стек</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_2">Модели данных</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#warrior">Warrior (Воин)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#profession">Profession (Профессия)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#skill">Skill (Навык)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#racetype">RaceType (Тип расы)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#api-endpoints">API Endpoints</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_3">Управление воинами</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_4">Управление профессиями</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_5">Управление навыками</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../pr3/">pr3</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../lr2/">lr2</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Документация</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">pr2</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="warriors-api-pr2">Документация по проекту Warriors API (PR2)</h1>
+<h2 id="_1">Технический стек</h2>
+<ul>
+<li>Python 3.x</li>
+<li>FastAPI</li>
+<li>SQLModel (ORM)</li>
+<li>PostgreSQL</li>
+<li>Docker</li>
+</ul>
+<h2 id="_2">Модели данных</h2>
+<h3 id="warrior">Warrior (Воин)</h3>
+<pre><code class="language-python">class Warrior:
+    id: int
+    race: RaceType
+    name: str
+    level: int
+    profession_id: Optional[int]
+    profession: Optional[Profession]
+    skills: Optional[List[Skill]]
+</code></pre>
+<h3 id="profession">Profession (Профессия)</h3>
+<pre><code class="language-python">class Profession:
+    id: int
+    title: str
+    description: str
+    warriors_prof: List[Warrior]
+</code></pre>
+<h3 id="skill">Skill (Навык)</h3>
+<pre><code class="language-python">class Skill:
+    id: int
+    name: str
+    description: str
+    warriors: Optional[List[Warrior]]
+</code></pre>
+<h3 id="racetype">RaceType (Тип расы)</h3>
+<pre><code class="language-python">class RaceType(Enum):
+    director = &quot;director&quot;
+    worker = &quot;worker&quot;
+    junior = &quot;junior&quot;
+</code></pre>
+<h2 id="api-endpoints">API Endpoints</h2>
+<h3 id="_3">Управление воинами</h3>
+<pre><code class="language-http">POST /warrior - Создать нового воина
+GET /warriors_list - Получить список всех воинов
+GET /warrior/{warrior_id} - Получить информацию о воине
+PATCH /warrior/{warrior_id} - Обновить информацию о воине
+DELETE /warrior/delete/{warrior_id} - Удалить воина
+POST /warrior/{warrior_id}/add_skill/{skill_id} - Добавить навык воину
+</code></pre>
+<h3 id="_4">Управление профессиями</h3>
+<pre><code class="language-http">GET /professions_list - Получить список всех профессий
+GET /profession/{profession_id} - Получить информацию о профессии
+POST /profession - Создать новую профессию
+</code></pre>
+<h3 id="_5">Управление навыками</h3>
+<pre><code class="language-http">GET /skills_list - Получить список всех навыков
+GET /skill/{skill_id} - Получить информацию о навыке
+POST /skill - Создать новый навык
+PATCH /skill/{skill_id} - Обновить информацию о навыке
+DELETE /skill/delete/{skill_id} - Удалить навык
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../pr1/" class="btn btn-neutral float-left" title="pr1"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../pr3/" class="btn btn-neutral float-right" title="pr3">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../pr1/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../pr3/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

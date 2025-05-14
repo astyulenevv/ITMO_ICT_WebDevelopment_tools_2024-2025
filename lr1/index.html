@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Тюленев Алексей" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>lr1 - Документация</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "lr1";
+        var mkdocs_page_input_path = "lr1/index.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Документация
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">lr1</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_1">Описание проекта</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_2">Технический стек</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">Структура проекта</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_4">Модели данных</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#user">User (Пользователь)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#team">Team (Команда)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#teammembership">TeamMembership (Участие в команде)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#hackathon">Hackathon (Хакатон)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#task">Task (Задание)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#submission">Submission (Решение)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#api-endpoints">API Endpoints</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_5">Аутентификация</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_6">Управление пользователями</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_7">Управление командами</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_8">Управление участием в командах</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_9">Управление хакатонами</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_10">Управление заданиями</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_11">Управление решениями</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_12">Безопасность</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_13">База данных</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_14">Подключение к базе данных</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_15">Разработка</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_16">Установка зависимостей</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_17">Запуск приложения</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_18">Управление миграциями</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../pr1/">pr1</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../pr2/">pr2</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../pr3/">pr3</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../lr2/">lr2</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Документация</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">lr1</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="hackathon-system">Документация проекта Hackathon System</h1>
+<h2 id="_1">Описание проекта</h2>
+<p>Hackathon System - это система управления хакатонами, которая позволяет организовывать и проводить хакатоны, управлять командами участников, заданиями и оценивать результаты.</p>
+<h2 id="_2">Технический стек</h2>
+<ul>
+<li>Python 3.x</li>
+<li>FastAPI (веб-фреймворк)</li>
+<li>SQLModel (ORM)</li>
+<li>PostgreSQL (база данных)</li>
+<li>Alembic (система миграций)</li>
+<li>JWT (аутентификация)</li>
+</ul>
+<h2 id="_3">Структура проекта</h2>
+<pre><code>lr1/
+├── alembic.ini            # Конфигурация Alembic
+├── connection.py          # Настройки подключения к БД
+├── main.py               # Основной файл приложения
+├── controllers/          # Контроллеры API
+├── models/              # Модели данных
+├── migrations/          # Миграции базы данных
+└── util/               # Вспомогательные утилиты
+</code></pre>
+<h2 id="_4">Модели данных</h2>
+<h3 id="user">User (Пользователь)</h3>
+<pre><code class="language-python">class User:
+    id: int
+    username: str        # Уникальное имя пользователя
+    hashed_password: str # Хэшированный пароль
+    email: str          # Уникальный email
+    bio: str           # Описание пользователя (опционально)
+</code></pre>
+<h3 id="team">Team (Команда)</h3>
+<pre><code class="language-python">class Team:
+    id: int
+    team_name: str      # Уникальное название команды
+    description: str    # Описание команды (опционально)
+    creator_id: int     # ID создателя команды
+</code></pre>
+<h3 id="teammembership">TeamMembership (Участие в команде)</h3>
+<pre><code class="language-python">class TeamMembership:
+    id: int
+    team_id: int       # ID команды
+    user_id: int       # ID пользователя
+    role: str         # Роль в команде
+    join_date: str    # Дата присоединения
+</code></pre>
+<h3 id="hackathon">Hackathon (Хакатон)</h3>
+<pre><code class="language-python">class Hackathon:
+    id: int
+    event_name: str    # Название мероприятия
+    description: str   # Описание хакатона
+    start_date: datetime # Дата начала
+    end_date: datetime  # Дата окончания
+</code></pre>
+<h3 id="task">Task (Задание)</h3>
+<pre><code class="language-python">class Task:
+    id: int
+    title: str        # Название задания
+    description: str  # Описание задания
+    requirements: str # Требования к выполнению
+    criteria: str    # Критерии оценки
+    deadline: datetime # Срок выполнения
+    hackathon_id: int # ID хакатона
+</code></pre>
+<h3 id="submission">Submission (Решение)</h3>
+<pre><code class="language-python">class Submission:
+    id: int
+    description: str  # Описание решения
+    file_url: str    # Ссылка на файл решения
+    submitted_at: datetime # Время отправки
+    evaluation: float # Оценка решения
+    task_id: int     # ID задания
+    user_id: int     # ID пользователя
+    team_id: int     # ID команды (опционально)
+</code></pre>
+<h2 id="api-endpoints">API Endpoints</h2>
+<h3 id="_5">Аутентификация</h3>
+<pre><code class="language-http">POST /users/register - Регистрация нового пользователя
+POST /users/login - Вход в систему
+</code></pre>
+<h3 id="_6">Управление пользователями</h3>
+<pre><code class="language-http">GET /users/{user_id} - Получение информации о пользователе
+PUT /users/{user_id}/password - Обновление пароля пользователя
+</code></pre>
+<h3 id="_7">Управление командами</h3>
+<pre><code class="language-http">POST /teams - Создание новой команды
+GET /teams - Получение списка команд
+GET /teams/{team_id} - Получение информации о команде
+</code></pre>
+<h3 id="_8">Управление участием в командах</h3>
+<pre><code class="language-http">POST /memberships - Присоединение к команде
+GET /memberships - Получение списка участий в командах
+</code></pre>
+<h3 id="_9">Управление хакатонами</h3>
+<pre><code class="language-http">POST /hackathons - Создание хакатона
+GET /hackathons - Получение списка хакатонов
+GET /hackathons/{hackathon_id} - Получение информации о хакатоне
+</code></pre>
+<h3 id="_10">Управление заданиями</h3>
+<pre><code class="language-http">POST /tasks - Создание задания
+GET /tasks - Получение списка заданий
+GET /tasks/{task_id} - Получение информации о задании
+</code></pre>
+<h3 id="_11">Управление решениями</h3>
+<pre><code class="language-http">POST /submissions - Отправка решения
+GET /submissions - Получение списка решений
+GET /submissions/{submission_id} - Получение информации о решении
+PUT /submissions/{submission_id}/evaluate - Оценка решения
+</code></pre>
+<h2 id="_12">Безопасность</h2>
+<p>Система использует JWT (JSON Web Tokens) для аутентификации пользователей. Все конфиденциальные данные, такие как пароли, хэшируются перед сохранением в базе данных. API защищен с помощью механизма Bearer-токенов.</p>
+<h2 id="_13">База данных</h2>
+<p>Проект использует PostgreSQL в качестве основной базы данных. Миграции управляются с помощью Alembic, что обеспечивает версионирование схемы базы данных.</p>
+<h3 id="_14">Подключение к базе данных</h3>
+<pre><code class="language-python">DATABASE_URL = &quot;postgresql://postgres:password@localhost:5432/hackathon_db&quot;
+</code></pre>
+<h2 id="_15">Разработка</h2>
+<h3 id="_16">Установка зависимостей</h3>
+<pre><code class="language-bash">pip install fastapi sqlmodel alembic psycopg2-binary python-jose[cryptography] python-multipart
+</code></pre>
+<h3 id="_17">Запуск приложения</h3>
+<pre><code class="language-bash">uvicorn main:app --reload
+</code></pre>
+<h3 id="_18">Управление миграциями</h3>
+<pre><code class="language-bash"># Создание новой миграции
+alembic revision --autogenerate -m &quot;description&quot;
+
+# Применение миграций
+alembic upgrade head
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../pr1/" class="btn btn-neutral float-right" title="pr1">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../pr1/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
